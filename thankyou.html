@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Thank You</title>
+<style>
+body {
+  font-family: Arial;
+  text-align: center;
+  padding: 50px;
+  background-color: #e8f5e9;
+  color: black;
+}
+
+.back-home {
+  display: inline-block;
+  margin-top: 30px;
+  background: none;
+  padding: 0;
+}
+
+.back-home img {
+  width: 150px;
+  height: auto;
+}
+</style>
+</head>
+<body>
+
+<h1 id="thankMsg">Thank you for your reservation!</h1>
+
+<a href="index.html" class="back-home">
+  <div style="display: inline-block; background: #4caf50; padding: 10px 20px; border-radius: 8px;">
+    <img src="text-1764152462830.png" alt="Back to Home">
+  </div>
+</a>
+
+<script>
+// Get query parameters
+const params = new URLSearchParams(window.location.search);
+const name = params.get('name');
+const date = params.get('date');
+
+if(name && date){
+  document.getElementById('thankMsg').textContent = `Thank you for your reservation, ${name}! Your date of visit is ${date}.`;
+}
+</script>
+
+</body>
+</html>
+

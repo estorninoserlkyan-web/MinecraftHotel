@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Book a Room</title>
+<style>
+body { 
+  font-family: Arial; 
+  text-align: center; 
+  padding: 30px; 
+  background-image: url('Block_of_Quartz_29_JE2_BE2.webp'); 
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-position: center; 
+  color: white; 
+}
+
+.logo { 
+  width: 500px; 
+  margin: 0 auto; 
+  display: block; 
+}
+
+.logo-hotel { 
+  width: 150px; 
+  margin: 10px auto 20px auto; 
+  display: block; 
+  border-radius: 0; 
+}
+
+.rooms { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); 
+  gap: 20px; 
+  padding: 20px; 
+}
+
+.card { 
+  background: rgba(242, 242, 242, 0.9); 
+  padding: 20px; 
+  border-radius: 10px; 
+  box-shadow: 0 0 10px rgba(0,0,0,0.1); 
+  position: relative;
+  color: black;
+  background-size: cover;
+  background-position: center;
+}
+
+.room-text {
+  background-color: rgba(0, 100, 0, 0.8);
+  color: white;
+  display: inline-block;
+  padding: 5px 15px;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+button { 
+  margin-top: 10px; 
+  padding: 10px 15px; 
+  cursor: pointer;
+}
+
+input[type=date], input[name=name], .confirm-btn { 
+  display: none; 
+  margin-top: 10px; 
+  margin-left: 5px;
+}
+
+.back-home {
+  display: inline-block;
+  margin-top: 30px;
+  background: none;
+  padding: 0;
+}
+.back-home img {
+  width: 150px;
+  height: auto;
+}
+
+/* Only top headings in black and left-aligned */
+.top-heading {
+  color: black;
+  text-align: left;
+  margin-left: 30px;
+  margin-bottom: 5px;
+}
+</style>
+</head>
+<body>
+
+<img src="new-minecraft-logo.png" alt="Minecraft Logo" class="logo">
+<img src="Hotel.png" alt="Hotel" class="logo-hotel">
+
+<h1 class="top-heading">Minecraft Hotel</h1>
+<p class="top-heading">Find a Room</p>
+<h3 class="top-heading">4 Available Rooms</h3>
+
+<div class="rooms">
+
+  <div class="card" style="background-image: url('Grass_Block_29_JE2_BE2.webp');">
+    <div class="room-text">
+      <h3>Noob Level</h3>
+      <p>3 night stay – ₱3000 – 2 Guests</p>
+    </div>
+    <button onclick="toggleDate('d1')">Choose a date</button>
+    <input id="d1" type="date" onchange="showNameAndConfirm('d1')">
+    <input id="name1" type="text" name="name" placeholder="Enter your name">
+    <button class="confirm-btn" id="confirm1" onclick="confirmBooking('name1','d1')">Confirm</button>
+  </div>
+
+  <div class="card" style="background-image: url('Block_of_Diamond_29_JE4_BE3.webp');">
+    <div class="room-text">
+      <h3>Pro Level</h3>
+      <p>3 night stay – ₱5000 – 4 Guests</p>
+    </div>
+    <button onclick="toggleDate('d2')">Choose a date</button>
+    <input id="d2" type="date" onchange="showNameAndConfirm('d2')">
+    <input id="name2" type="text" name="name" placeholder="Enter your name">
+    <button class="confirm-btn" id="confirm2" onclick="confirmBooking('name2','d2')">Confirm</button>
+  </div>
+
+  <div class="card" style="background-image: url('Bedrock_29_JE1_BE1.webp');">
+    <div class="room-text">
+      <h3>Hacker Level</h3>
+      <p>3 night stay – ₱7000 – 8 Guests</p>
+    </div>
+    <button onclick="toggleDate('d3')">Choose a date</button>
+    <input id="d3" type="date" onchange="showNameAndConfirm('d3')">
+    <input id="name3" type="text" name="name" placeholder="Enter your name">
+    <button class="confirm-btn" id="confirm3" onclick="confirmBooking('name3','d3')">Confirm</button>
+  </div>
+
+  <div class="card" style="background-image: url('Block_of_Netherite_29_JE1_BE1.webp');">
+    <div class="room-text">
+      <h3>God Level</h3>
+      <p>3 night stay – ₱9000 – 16 Guests</p>
+    </div>
+    <button onclick="toggleDate('d4')">Choose a date</button>
+    <input id="d4" type="date" onchange="showNameAndConfirm('d4')">
+    <input id="name4" type="text" name="name" placeholder="Enter your name">
+    <button class="confirm-btn" id="confirm4" onclick="confirmBooking('name4','d4')">Confirm</button>
+  </div>
+
+</div>
+
+<script>
+function toggleDate(id){
+  let box = document.getElementById(id);
+  box.style.display = box.style.display=="block" ? "none" : "block";
+}
+
+// Show name input and confirm button when date is selected
+function showNameAndConfirm(dateId) {
+  const index = dateId.charAt(dateId.length-1); // d1 -> 1
+  const nameInput = document.getElementById('name'+index);
+  const confirmBtn = document.getElementById('confirm'+index);
+  nameInput.style.display = 'inline-block';
+  confirmBtn.style.display = 'inline-block';
+}
+
+// Confirm booking and redirect to thank-you page
+function confirmBooking(nameId, dateId){
+  const name = document.getElementById(nameId).value;
+  const date = document.getElementById(dateId).value;
+  if(name === "" || date === ""){
+    alert("Please enter your name and select a date.");
+    return;
+  }
+  // Redirect to thank-you page with query parameters
+  window.location.href = `thankyou.html?name=${encodeURIComponent(name)}&date=${encodeURIComponent(date)}`;
+}
+</script>
+
+<a href="index.html" class="back-home">
+  <div style="display: inline-block; background: #4caf50; padding: 10px 20px; border-radius: 8px;">
+    <img src="text-1764152462830.png" alt="Back to Home">
+  </div>
+</a>
+
+</body>
+</html>

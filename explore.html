@@ -1,0 +1,163 @@
+﻿<!DOCTYPE html> 
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Explore Rooms</title>
+<style>
+ body { 
+   font-family: Arial; 
+   text-align: center; 
+   padding: 40px; 
+   background-image: url('redwool.png'); 
+   background-size: cover; 
+   background-repeat: no-repeat; 
+   background-position: center; 
+   color: white; 
+ }
+
+ /* Upper logos */
+ .logo { 
+   width: 500px; 
+   margin: 0 auto; 
+   display: block; 
+ }
+
+ .logo-hotel { 
+   width: 150px; 
+   margin: 10px auto 20px auto; 
+   display: block; 
+   border-radius: 0; 
+ }
+
+ .section { 
+   background: rgba(242, 242, 242, 0.9); 
+   padding: 30px; 
+   margin: 40px auto; 
+   width: 70%; 
+   border-radius: 15px; 
+   box-shadow: 0 0 10px rgba(0,0,0,0.1); 
+   position: relative;
+ }
+
+ /* Room backgrounds */
+ .noob-section { 
+   background-image: url('Grass_Block_29_JE2_BE2.webp');
+   background-size: cover;
+   background-position: center;
+ }
+
+ .pro-section { 
+   background-image: url('Block_of_Diamond_29_JE4_BE3.webp');
+   background-size: cover;
+   background-position: center;
+ }
+
+ .hacker-section { 
+   background-image: url('Bedrock_29_JE1_BE1.webp');
+   background-size: cover;
+   background-position: center;
+ }
+
+ .god-section { 
+   background-image: url('Block_of_Netherite_29_JE1_BE1.webp');
+   background-size: cover;
+   background-position: center;
+ }
+
+ /* Compact dark green box for text */
+ .room-text {
+   background-color: rgba(0, 100, 0, 0.8);
+   color: white;
+   display: inline-block;
+   padding: 5px 15px; 
+   border-radius: 8px;
+   margin-top: 10px;
+ }
+
+ /* Center View Room button */
+ .view-button {
+   text-align: center;
+   margin-top: 15px;
+ }
+
+ a.view-link { 
+   display: inline-block; 
+   padding: 10px 20px; 
+   background: #4caf50; 
+   color: white; 
+   text-decoration: none; 
+   border-radius: 8px; 
+ }
+
+ /* Back to Home button as PNG */
+ .back-home {
+   display: inline-block;
+   margin-top: 30px;
+   background: none;  /* remove green button background */
+   padding: 0;
+ }
+ .back-home img {
+   width: 150px; /* adjust size */
+   height: auto;
+ }
+</style>
+</head>
+<body>
+
+<!-- Logo images -->
+<img src="new-minecraft-logo.png" alt="Minecraft Logo" class="logo">
+<img src="Hotel.png" alt="Hotel" class="logo-hotel">
+
+<p style="font-size: 24px;">Maximize your fun in 5 Levels</p>
+
+<div class="section noob-section">
+  <div class="room-text">
+    <h2>Noob Room</h2>
+    <p>Room perfect for 2 people</p>
+  </div>
+  <div class="view-button">
+    <a href="noob.html" class="view-link">View Room</a>
+  </div>
+</div>
+
+<div class="section pro-section">
+  <div class="room-text">
+    <h2>Pro Room</h2>
+    <p>Room perfect for 4 people</p>
+  </div>
+  <div class="view-button">
+    <a href="pro.html" class="view-link">View Room</a>
+  </div>
+</div>
+
+<div class="section hacker-section">
+  <div class="room-text">
+    <h2>Hacker Room</h2>
+    <p>Room perfect for 8 people</p>
+  </div>
+  <div class="view-button">
+    <a href="hacker.html" class="view-link">View Room</a>
+  </div>
+</div>
+
+<div class="section god-section">
+  <div class="room-text">
+    <h2>God Room</h2>
+    <p>Room perfect for 16 people</p>
+  </div>
+  <div class="view-button">
+    <a href="god.html" class="view-link">View Room</a>
+  </div>
+</div>
+
+<!-- Back to Home as PNG with green background -->
+<a href="index.html" class="back-home">
+  <div style="display: inline-block; background: #4caf50; padding: 10px 20px; border-radius: 8px;">
+    <img src="text-1764152462830.png" alt="Back to Home" style="width: 150px; height: auto;">
+  </div>
+</a>
+
+</a>
+
+</body>
+</html>
